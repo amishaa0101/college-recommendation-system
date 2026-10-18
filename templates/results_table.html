@@ -1,0 +1,30 @@
+{% if results %}
+<p class="results-summary">{{ results|length }} colleges found for rank {{ user_rank }} ({{ category }} category), based on last year's closing ranks. Click a college for details.</p>
+<table class="college-table">
+    <thead>
+        <tr>
+            <th>College Name</th>
+            <th>Program Name</th>
+            <th>{{ category }} Closing Rank</th>
+            <th>Chance</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in results %}
+        <tr>
+            <td>{{ row['College Name'] }}</td>
+            <td>{{ row['Program Name'] }}</td>
+            <td>{{ row['Closing Rank'] }}</td>
+            <td><span class="chance chance-{{ row['Chance']|lower }}">{{ row['Chance'] }}</span></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p class="chance-legend">
+    <span class="chance chance-safe">Safe</span> closing rank 20% or more beyond your rank
+    <span class="chance chance-moderate">Moderate</span> you are within last year's cut-off
+    <span class="chance chance-reach">Reach</span> you are just outside the cut-off (up to 10%)
+</p>
+{% else %}
+<p class="results-summary">No colleges found for rank {{ user_rank }} in this program and category. Try another program or category.</p>
+{% endif %}

@@ -1,0 +1,601 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0B3142;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.main-heading{
+    margin-top: 70px;
+}
+
+.first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position:sticky;
+    /* Keep the header (and its fixed navbar) above .middle, which has z-index 1,
+       otherwise .middle covers the nav links and they cannot be clicked */
+    z-index: 1000;
+
+}
+.title{
+    margin-left: 900px;
+    padding-left: 120px;
+    
+    width: 1000px;
+   margin-top: 30px;
+    margin-right: 0px;
+    position: fixed;
+        top: 5px;
+        left: 10px;
+    /* The title box is very wide, so let clicks pass through it */
+    pointer-events: none;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    
+}
+
+.image {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.navbar {
+    position: fixed;
+    top: 25px; /* Adjust the top distance as needed */
+    left: 46%; /* Center the navbar horizontally */
+    transform: translateX(-50%); /* Center the navbar horizontally */
+    width: 700px;
+    z-index: 1000; /* Ensure the navbar is above other content */
+    display: flex;
+    height: 49px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Adjust alignment as needed */
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 100px;
+    border: 1px solid var(--stroke, hsla(0, 0%, 100%, .2));
+    background: rgba(0, 0, 0, .1);
+    box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(20px);
+    pointer-events: auto;
+
+    /* Your custom properties */
+    --glow-rgb: 239 42 201;
+    --magic-glow-top: 25.3%;
+    --bg: #0c0a1a;
+    --border: #84738c;
+    --card: #101123;
+    --color: #c3c3d5;
+    --border-width: 2px;
+    --border-radius: 32px;
+    --gradient: conic-gradient(from 180deg at 50% 70%, #fafafa 0deg, #fafafa 1turn);
+    --star-move: -1000px;
+    --card-animation-X-hover-right: -168px;
+    --card-animation-X-hover-left: 168px;
+    --card-animation-X-right: 120px;
+    --card-animation-X-left: -120px;
+    -webkit-font-smoothing: antialiased;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 0.7);
+    font-family: Poppins, sans-serif;
+    font-feature-settings: "clig" off, "liga" off;
+    font-size: 16px;
+    line-height: 25px;
+    box-sizing: border-box;
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59, 130, 246, .5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    
+}
+.logo{
+        margin-top: 22px;
+        margin-left: 50px;
+        position: fixed;
+        top: 5px;
+}
+
+.navbar .logo img {
+    margin-right: 10px;
+}
+
+.navbar .logo p {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li:last-child {
+    margin-right: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    cursor: pointer;
+}
+.watermark_img {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.watermark_img::after {
+    background: url(background.jpeg);
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; /* Move the background image behind other content */
+    content: '';
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.middle {
+     /* Adjust background color opacity */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative; /* Ensure positioning for the background image */
+    z-index: 1; /* Ensure the form is above the background image */
+}
+
+.container {
+    padding: 5px;
+    margin-left: 300px;
+
+}
+.text1{
+    margin: 4px;
+    padding: 4px;
+    text-align: justify;
+    line-height: 22px;
+}
+
+/* Your existing form input styles */
+
+.form1 {
+    border-radius: 100px;
+    border: 1px solid var(--stroke, hsla(0, 0%, 100%, .2));
+    background: rgba(0, 0, 0, .1);
+    box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(20px);
+    padding-left: 20px;
+    height: 30px;
+    color: white;
+}
+.form2 {
+    border-radius: 100px;
+    border: 1px solid var(--stroke, hsla(0, 0%, 100%, .2));
+    background: rgba(0, 0, 0, .1);
+    box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(20px);
+    padding-left: 20px;
+    height: 30px;
+    color: white;
+}
+.form3 {
+    border-radius: 100px;
+    border: 1px solid var(--stroke, hsla(0, 0%, 100%, .2));
+    background: rgba(0, 0, 0, .1);
+    box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(20px);
+    padding-left: 20px;
+    height: 30px;
+    color: white;
+}
+.form4 {
+    border-radius: 20px;
+    height: 150px;
+    border: 1px solid var(--stroke, hsla(0, 0%, 100%, .2));
+    background: rgba(0, 0, 0, .1);
+    box-shadow: 0 0 20px 0 hsla(0, 0%, 100%, .1);
+    backdrop-filter: blur(20px);
+    padding-left: 20px;
+padding-top: 20px;
+    color: white;
+}
+.butn {
+    padding: 8px;
+    margin-left: 200px;
+    width: 120px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+
+}
+.butn:hover {
+    background-color: #4a7c8c;
+    color: white;
+}
+.middle h3 {
+    margin-bottom: 10px;
+}
+.t1{
+    margin-top: 50px;
+}
+.middle p {
+    margin-bottom: 20px;
+}
+
+.method {
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.method label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.method select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+.title2{
+    margin-left: 100px;
+}
+.number,
+.program,
+.college {
+    display: none;
+    margin-bottom: 10px;
+}
+
+.number label,
+.program label,
+.college label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.number input,
+.program input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.college select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Updated style for the dropdown list */
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Updated style for the dropdown options */
+select option {
+    background-color: #0B3142;
+    color: #fff;
+}
+
+.button {
+    text-align: center;
+}
+
+.button button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6ca1b8;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button button:hover {
+    background-color: #4a7c8c;
+}
+
+#college-list {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Updated style for the college information table */
+.college-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    cursor: pointer;
+}
+
+.college-table th,
+.college-table td {
+    padding: 10px;
+    border: 1px solid #fff;
+    text-align: left;
+}
+
+.college-table th {
+    background-color: #4a7c8c;
+}
+
+.college-table td {
+    background-color: #6ca1b8;
+}
+
+.college-table tr:nth-child(even) td {
+    background-color: #4a7c8c;
+}
+
+/* Chance labels in the recommendation table */
+.chance {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.chance-safe {
+    background-color: #2e7d32;
+}
+
+.chance-moderate {
+    background-color: #b8860b;
+}
+
+.chance-reach {
+    background-color: #c62828;
+}
+
+.results-summary,
+.chance-legend {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.chance-legend .chance {
+    margin-left: 10px;
+}
+
+/* Additional styles for the college information */
+.college-info {
+    margin-top: 20px;
+}
+
+.college-info .info-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.college-info .field {
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.college-info .value {
+    flex-grow: 1;
+}
+
+/* Additional styles for the About Us Page */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}    
+
+.about-section .left {
+    width: 60%;
+}
+
+.about-section .right {
+    width: 35%;
+}
+
+.about-section h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.about-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Additional styles for the Contact Us Page */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contact-section .details {
+    width: 60%;
+}
+
+.contact-section .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-section label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+    width: 100%;
+    padding: 15px; /* Increased size of input fields */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact-section textarea {
+    resize: vertical;
+    height: 150px; /* Increased height of textarea */
+}
+
+.contact-section button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 20px; /* Increased padding of button */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional Styles for Thank You Page */
+.thank-you {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.thank-you h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.thank-you p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.thank-you .btn-back-home {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.thank-you .btn-back-home:hover {
+    background-color: #0056b3;
+}
+
+.back-link {
+    color: #fff;
+    font-weight: bold;
+}

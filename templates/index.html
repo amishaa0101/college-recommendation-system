@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+</head>
+<body>
+    <div class="main watermark_img" style="height:595px;" >
+        <div class="first text">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="image" height="50px" width="50px" style="background-color: #0B3142; border-radius: 50%;">
+                
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/about" class="nav-link">About Us</a></li>
+                    <li><a href="/contact" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="title" >
+            <p >College Recommendation System</p>
+            </div>
+        </div>
+        <div class="middle">
+            <h3 class="main-heading">Get College Recommendations</h3>
+            <form id="recommend-form" method="POST">
+                <div class="method">
+                    <label for="method">Choose Method:</label>
+                    <select id="method" name="method" required>
+                        <option value="college_pref">By College Preference</option>
+                        <option value="rank_program">By Rank and Program Name</option>
+                    </select>
+                </div>
+                <div class="number" id="rank-input">
+                    <label for="rank">Enter your rank:</label>
+                    <input type="number" id="rank" name="rank">
+                </div>
+                <div class="program" id="category-input">
+                    <label for="category">Choose your category:</label>
+                    <select id="category" name="category">
+                        <option value="OPEN">Open</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                        <option value="SEBC">SEBC</option>
+                        <option value="EWS">EWS</option>
+                        <option value="TFWS">TFWS</option>
+                    </select>
+                </div>
+                <div class="program" id="program-input">
+                    <label for="program">Enter program name:</label>
+                    <select id="program" name="program">
+                        {% for program in program_names %}
+                            <option value="{{ program }}">{{ program }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="college" id="college-input">
+                    <label for="college">Choose college name:</label>
+                    <select id="college" name="college">
+                        {% for college in college_names %}
+                            <option value="{{ college }}">{{ college }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="button">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div id="college-list" class="college-list">
+            <!-- This will display the recommended colleges -->
+        </div>
+        <div id="college-info" class="college-info">
+            <!-- This will display the college information when a college is clicked -->
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.vscode/
+
+# Written by the Contact page at runtime, holds users' names and emails
+feedback.txt

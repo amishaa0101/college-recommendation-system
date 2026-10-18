@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+</head>
+<body>
+    <div class="main">
+        <div class="first text">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="image" height="50px" width="50px" style="background-color: #0B3142; border-radius: 50%;">
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/about" class="nav-link">About Us</a></li>
+                    <li><a href="/contact" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="title">
+                <p>College Recommendation System</p>
+            </div>
+        </div>
+        <div class="college-info-container">
+            <h3 class="main-heading">College Information</h3>
+            <div class="college-info">
+                {% for item in college_info %}
+                    <div class="info-row">
+                        <span class="field">{{ item['field'] }}:</span>
+                        <span class="value">{{ item['value'] }}</span>
+                    </div>
+                {% else %}
+                    <p>Detailed information for <b>{{ college_name }}</b> is not available yet.</p>
+                {% endfor %}
+            </div>
+            <p><a href="javascript:history.back()" class="back-link">&larr; Back</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="body watermark_img">
+    
+    <div class="main "  style="height:595px;">
+        <div class="first"> 
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" class="image" height="50px" width="50px" style="background-color: #0B3142; border-radius: 50%;">
+                
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact Us</a></li>  
+                </ul>
+            </div>
+            <div class="title">
+            <p >College Recommendation System</p>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="left scrollable">
+                <h1 class="t1">ABOUT US</h1 >
+                <div class="about1 "  style="color:#fff"> 
+                    <p>Welcome to College Recommendation System!</p>
+                    <p class="text1">Every year ACPC Gujarat publishes the closing ranks for every engineering college and branch, but these lists are long PDF and Excel sheets that are hard to read. Our tool turns that data into a simple, rule-based recommendation system so students can quickly see which colleges are realistic for their rank.</p>
+
+                    <p><b>What you can do today</b></p>
+                    <p class="text1">Search by rank: enter your ACPC merit rank, choose your category (Open, SC, ST, SEBC, EWS or TFWS) and your preferred program. You get a list of colleges sorted by closing rank, each marked as Safe, Moderate or Reach depending on how far your rank is from last year's cut-off.</p>
+                    <p class="text1">Search by college: pick a college to see every program it offers along with the category-wise closing ranks.</p>
+                    <p class="text1">College details: click any college in the results to see its address, contact number, email, website, district, hostel, mess and transport facilities, and tuition fees.</p>
+                    <p class="text1">The current data covers 124 colleges and 74 programs from the ACPC 2023 closure list, plus detailed information for 137 institutes.</p>
+
+                    <p><b>Coming soon</b></p>
+                    <p class="text1">Predictive analysis: using closing ranks from previous years to show how cut-offs are trending and estimate your chance of admission more accurately.</p>
+                    <p class="text1">Personalized recommendations: filtering by district, fees and facilities to match each student's preferences.</p>
+                    <p class="text1">Updates and alerts: notifications about application deadlines, scholarship opportunities and changes in admission rules.</p>
+                    <p class="text1">Conversational chat: asking questions in plain language, such as "Which computer engineering colleges near Ahmedabad can I get with rank 8000?"</p>
+                </div>
+                
+            </div>
+           
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
